@@ -5,7 +5,8 @@ import json
 import torch
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
-from transformers import AdamW, get_scheduler
+from transformers import get_scheduler
+from torch.optim import AdamW
 
 from Translators import OpusTranslator
 from MyDataset import TransDataset
