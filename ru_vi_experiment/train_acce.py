@@ -113,9 +113,15 @@ for epoch in range(num_epochs):
     bleu_score = results["score"]
     print(f"BLEU Score: {bleu_score:.2f}")
 
+    # Lưu mô hình tốt nhất
+    # Lưu mô hình fine-tuned
+    accelerator.wait_for_everyone()
+    unwrapped = accelerator.unwrap_model(translator.model)
+    unwrapped.save_pretrained("./ru_vi_finetuned/best_model", save_function=accelerator.save)
+    tokenizer.save_pretrained("./ru_vi_finetuned/best_model")
 
 # Lưu mô hình fine-tuned
 accelerator.wait_for_everyone()
 unwrapped = accelerator.unwrap_model(translator.model)
-unwrapped.save_pretrained("./ru_vi_finetuned/best_model", save_function=accelerator.save)
-tokenizer.save_pretrained("./ru_vi_finetuned/best_model")
+unwrapped.save_pretrained("./ru_vi_finetuned/last_model", save_function=accelerator.save)
+tokenizer.save_pretrained("./ru_vi_finetuned/last_model")
