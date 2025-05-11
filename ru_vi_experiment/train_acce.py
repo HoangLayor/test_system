@@ -109,7 +109,7 @@ for epoch in range(num_epochs):
     print(f"✅ Epoch {epoch+1} completed. Avg Loss: {total_loss / len(train_dataloader):.4f}")
 
     # Đánh giá mô hình sau mỗi epoch
-    results = evaluate_model(translator.model, test_dataset.sources, test_dataset.targets)
+    results = evaluate_model(translator, test_dataset.sources, test_dataset.targets)
     bleu_score = results["score"]
     print(f"BLEU Score: {bleu_score:.2f}")
 
