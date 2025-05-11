@@ -24,10 +24,10 @@ batch_size = 8
 learning_rate = 5e-5
 max_length = 128
 
-train_data_dir = "./dataset/train_data/OPUS-MultiCCAligned"
+train_data_dir = "./dataset/train_data/OPUS-NeuLab-TedTalks"
 test_data_dir = "./dataset/test_data/OPUS-Tatoeba"
-train_ru_path = f"{train_data_dir}/MultiCCAligned.ru-vi.ru"
-train_vi_path = f"{train_data_dir}/MultiCCAligned.ru-vi.vi"
+train_ru_path = f"{train_data_dir}/NeuLab-TedTalks.ru-vi.ru"
+train_vi_path = f"{train_data_dir}/NeuLab-TedTalks.ru-vi.vi"
 test_ru_path  = f"{test_data_dir}/Tatoeba.ru-vi.ru"
 test_vi_path  = f"{test_data_dir}/Tatoeba.ru-vi.vi"
 
